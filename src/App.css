@@ -1,38 +1,179 @@
-.App {
+*{
+  margin: 0%;
+ 
+}
+.hm{
+  
+  
+}
+.bg-i{
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./download.png");
+  background-repeat: no-repeat;
+  position: absolute;
+}
+.bg-w{
+  background-color: white;
+  width: 100vw;
+  height: 20vh;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+}
+.bg-w-t{
+  /* background-color: red; */
+  /* width: 100vw;
+  height: 20vh; */
+ 
+  border-bottom: 15vw solid white;
+  border-left: 100vw solid transparent;
+  position: absolute;
+  bottom: 20%;
+  left: 0%;
+}
+#nav{
+  width: 100vw;
+  height: 10vh;
+  position: absolute;
+  display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+}
+#nav>ul{
+  transform: translateY(23px);
+  text-decoration: none;
+  list-style: none;
+  
+  
+}
+#nav>ul>li{
+  float: left;
+}
+.ct-btn>ul{
+  text-decoration: none;
+  list-style: none;
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+}
+.ct-btn>ul>li{
+  float: left;
+}
+.center-btn{
+  font-family: 'Kanit', sans-serif;
+color: white;
+ background-color: transparent;
+ font-size: 1rem;
+ margin-right: 50px;
+ cursor: pointer;
+ border: none;
+}
+.center-btn:hover{
+  color: rgba(180, 180, 180, 0.685);
+}
+.logo-svg{
+position: absolute;
+left: 12%;
+cursor: pointer;
+}
+
+.signin-btn{
+  position: absolute;
+  right: 13%;
+  cursor: pointer;
+  font-family: 'Kanit', sans-serif;
+color: white;
+font-size: 1rem;
+border: none;
+width: 7vw;
+border-radius: 1em;
+background-color: rgba(255, 255, 255, 0.329);
+
+}
+.signin-btn:hover
+#arr{
+  
+  transform: translateX(20%);
+  transition: transform 1s;
+}
+.maintxt{
+  width: 50vw;
+  position: absolute;
+  top: 30%;
+ 
+  left: 12%;
+  font-size: 2.8rem;
+  font-family: 'Kanit', sans-serif;
+color: black;
+}
+.maintxt>h1{
+  margin-bottom: -0.5em;
+}
+.maintxt>p{
+  position: absolute;
+  bottom: -60%;
+  width: 40vw;
+  font-size: 0.5em;
+  color: gray;
+}
+#watch{
+  position: absolute;
+  font-size: 0.3em;
+  cursor: pointer;
+  display: flex;
+  justify-content: middle;
+align-items: center;
+  height: 4vh;
   text-align: center;
+  width: 28vw ;
+  background-color: rgba(128, 128, 128, 0.425);
+  border-radius: 1em;
+  font-family: 'Kanit', sans-serif;
+  color: white;
+  top: -12%;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#watch:hover
+#arr{
+transform: translateX(20%);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.mainimg{
+  position: absolute;
+  right: 20%;
+  top: 30%;
+  
 }
+.mainimg>img{
+  border-radius: 2em;
+  box-shadow: inset 12px 12px 10px  black;
+}
+.graphs{
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  position: absolute;
+  right: 0%;
+  top: 29%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.graphs>img{
+  border-radius: 0.2em;
+  box-shadow:  1px 1px 10px  black;
+}
+.seimg{
+  position: absolute;
+  top: -10%;
+right: 0%;
+  margin-bottom: 0.5em;
+}
+.DashboardGraphic__sidebar{
+  transform: translate(-80%,-210%);
   color: white;
+  font-family: 'Kanit', sans-serif;
+  display: flex;
+  justify-content: middle;
+  align-items: center;
+  padding-right: 1em;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.DashboardGraphic__sidebar>svg{
+  padding-right: 1em;
+  padding-left: 0.7em;
 }
