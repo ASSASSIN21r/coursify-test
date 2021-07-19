@@ -2,10 +2,71 @@ import logo from './logo.svg';
 import arr from './arr.svg'
 import './App.css';
 import s from './s.png'
-import react from 'react'
+import react, { Component } from 'react'
 import search from './search.png'
 import graphs from './gs.png'
-function Homescreen() {
+import tech1 from './tech1.png'
+import tech2 from './tech2.png'
+import tech3 from './tech3.png'
+import tech4 from './tech4.png'
+import tech5 from './tech5.png'
+import earth from './earth.png'
+import comp from './comp.png'
+class Homescreen extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+        dispproduct:"none",
+        
+        dispuse:"none"};
+      }
+ 
+     prohover=()=>{
+         if(this.state.dispproduct=='flex'){
+            
+         this.setState({
+            dispproduct:"none",
+           
+         })
+         }
+         else{
+            this.setState({
+                dispproduct:"flex",
+                dispuse:"none",
+                
+             })
+         }
+     }
+
+     usehover=()=>{
+        if(this.state.dispuse=='flex'){
+           
+        this.setState({
+           dispuse:"none",
+          
+        })
+        }
+        else{
+           this.setState({
+               dispuse:"flex",
+               dispproduct:"none",
+               
+            })
+        }
+    }
+
+
+
+
+
+
+
+
+
+render(){
+
+
+
   return (
     <div  className='hm' >
        <div className="bg-i"></div>
@@ -19,8 +80,8 @@ function Homescreen() {
            <li>
            <div className='ct-btn'>
                <ul>
-           <li><button  className='center-btn'>Products</button></li>
-           <li><button className='center-btn'>Use cases</button></li>
+           <li><button  className='center-btn' onClick={this.prohover} >Products</button></li>
+           <li><button className='center-btn' onClick={this.usehover}  >Use cases</button></li>
            <li><button  className='center-btn'>Developers</button></li>
            <li><button  className='center-btn'>Company</button></li>
            <li><button className='center-btn'>pricing</button></li>
@@ -52,9 +113,116 @@ function Homescreen() {
            <h1>Infrastructure</h1>
            <h1>for the internet</h1>
            <p>Millions of businesses of all sizes—from startups to large enterprises—use Stripe’s software and APIs to accept payments, send payouts, and manage their businesses</p>
+       <div className='txtbtn'><button  id='startbtn'>Start Now</button>
+       <button id='conbtn' >Contact Sales</button></div>
+       
+       </div>
+
+    
+    <div className='prod-dropdwn' style={{display:this.state.dispproduct}} onMouseOver={this.divphov} >
+        <div className='trismol'></div>
+        <ul className='ul1' >
+            <h4 style={{color:"grey",transform:"translateY(-30%)"}}>PAYMENTS</h4>
+            <li>Payments</li>
+            <p>Online Payments</p>
+            <li>Payment Links</li>
+            <p>No-code Payments</p>
+            <li>Invoicing</li>
+            <p>Online invoices</p>
+            <li>Billing</li>
+            <p>Subscription Management</p>
+            <li>Connect</li>
+            <p>Payments for platforms</p>
+            <li>Terminal</li>
+            <p>In-person Payments</p>
+        </ul>
+        <ul className='ul2'>
+            <h4 style={{color:"grey",transform:"translateY(-30%)"}}>FINANCIAL SERVICES</h4>
+            <li>Issuing</li>
+            <p>Card Creation</p>
+        </ul>
+        <ul className='ul3'>
+            <h4 style={{color:"grey",transform:"translateY(-30%)"}}>BUSINESS OPERATIONS</h4>
+            <li>Radar</li>
+            <p>Fraud & risk Management</p>
+            <li>Sigma</li>
+            <p>Custom reports</p>
+            <li>Atlas</li>
+            <p>Startup incoporation</p>
+            <li>Climate</li>
+            <p>Carbon removal</p>
+            <li>Tax</li>
+            <p>VAT automation</p>
+            <li>Identity</li>
+            <p>Online identity verification</p>
+        </ul>
+    </div>
+    <div className='usedropdwn' style={{display:this.state.dispuse}}>
+    <div className='trismol' style={{transform:"translateX(6em)"}}></div>
+    <ul className='ul1' >
+            
+            <li>Ecommerce</li>
+            <p>Unify online and in-person payments</p>
+            <li>SaaS</li>
+            <p>Manage recurring bills and Subscriptions</p>
+            <li>Marketplaces</li>
+            <p>Payout globally facilitate multiparty payments</p>
+            <li>Platforms</li>
+            <p>Let customer accept payments within your platform</p>
+           
+        </ul>
+    </div>
+    <div className='comps'>
+        <img src={comp}></img>
+        
+    </div>
+    <div className='plat'>
+      <h3>Unified platform</h3>
+      <h1>A fully integrated suite of payments products</h1>
+      <p>We bring together everything that’s required to build websites and apps that accept payments and send payouts globally. Stripe’s products power payments for</p> 
+      <a><p>online and in-person retailers</p></a>
+      
+      <a>software platforms and marketplaces</a> <p>and everything in between.</p>
+    <button>Start with payments</button>
+    </div>
+    <div className='techimg'>
+        <img id='tech1' src={tech1}></img>
+        <img id='tech2' src={tech2}></img>
+        <img id='tech3'src={tech3}></img>
+        <img id='tech4' src={tech4}></img>
+        <img  id='tech5' src={tech5}></img>
+    </div>
+    <div className='bg-w' id='bg-blue'></div>
+       <div className='bg-w-t' id='bg-2'></div>
+       <div className='bg-w-t' id='bg-3'></div>
+       <div className='earth'>
+           <div className='earthtext'>
+           <h2>Global Scale</h2>
+           <h1>The backbone for internet business</h1>
+           <h4>For ambitious companies around the world, Stripe makes moving money as simple, borderless, and programmable as the rest of the internet. Our teams are based in dozens of offices around the world and we process hundreds of billions of dollars each year for</h4> <a>startups to large enterprises</a>
+           <div className='stats'>
+           <h2>250M+</h2>
+           <p>API requests per day,peaking at 13000 requests a second</p>
+           </div>
+           <div className='stats' id='stat2'>
+           <h2>90%</h2>
+           <p>of U.S. adults have bought from businesses using stripe</p>
+           </div>
+           <div className='stats' id='stat3'>
+           <h2>135+</h2>
+           <p>Currencies and payment methods supported</p>
+           </div>
+           <div className='stats' id='stat4'>
+           <h2>35+</h2>
+           <p>Countries with local acquiring optimizing acceptance rates</p>
+           </div>
+
+
+           </div>
+<img src={earth}></img>
        </div>
     </div>
-  );
+  );}
 }
 
 export default Homescreen;
