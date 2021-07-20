@@ -14,7 +14,7 @@ background: linear-gradient(0deg, rgba(175,46,255,1) 0%, rgba(45,245,253,1) 100%
 .hm{
   
   width: 99vw;
- height: 700vh;
+ height: 500vh;
  
 }
 .bg-i{
@@ -220,6 +220,55 @@ right: 0%;
   box-shadow:  10px 100px 100px rgba(0, 0, 0, 0.603);
   display: none;
 }
+.devdropdwn{
+  position: absolute;
+  top: 9%;
+  right: 34%;
+  width: 25vw;
+  height: 32vh;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: middle;
+  align-items: top;
+  border-radius: 1em;
+  box-shadow:  10px 100px 100px rgba(0, 0, 0, 0.603);
+  display: none;
+}
+.compdrpdwn{
+  position: absolute;
+  top: 9%;
+  right: 24%;
+  width: 25vw;
+  height: 32vh;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: middle;
+  align-items: top;
+  border-radius: 1em;
+  box-shadow:  10px 100px 100px rgba(0, 0, 0, 0.603);
+}
+.compdrpdwn>ul{
+  list-style: none;
+  position: absolute;
+  right: 10%;
+}
+.compdrpdwn>li{
+  color: black;
+  font-size: 1em;
+  font-weight: 900;
+}
+.devdropdwn>ul{
+  list-style: none;
+  position: absolute;
+  right: 10%;
+}
+.devdropdwn>li{
+  color: black;
+  font-size: 1em;
+  font-weight: 900;
+}
 .usedropdwn>ul{
   list-style: none;
   position: absolute;
@@ -304,7 +353,7 @@ right: 0%;
 #startbtn{
   color: white;
   font-family: 'Kanit', sans-serif;
-  background-color: rgb(1, 1, 167);
+  background-color: #6734eb;
   font-size: 1rem;
   border-radius: 1em;
   width: 7vw;
@@ -313,8 +362,7 @@ right: 0%;
   padding: 0.3em;
 }
 #startbtn:hover{
-  color:rgb(1, 1, 167) ;
-  background-color: rgba(238, 70, 70, 0.37);
+  background-color: rgb(41, 36, 36);
 }
 #conbtn{
  color: black;
@@ -494,4 +542,143 @@ transform: translateY(-27%);
 #stat4{
   position: absolute;
   left: 230%;
+}
+.ldiv{
+  font-family: 'Kanit', sans-serif; 
+  position: absolute;
+  bottom:-420%;
+  left: 13%;
+  width: 30vw;
+}
+.ldiv>h2>{
+  color: black;
+}
+.ldiv>h3{
+  color: rgb(88, 88, 88);
+}
+#samebtns{
+  position: absolute;
+bottom:  -40%;
+}
+.extdiv{
+  position: absolute;
+  right: -90%;
+  top: -15%;
+  width: 20vw;
+}
+.extdiv>p{
+color: rgb(88, 88, 88); 
+}
+.extdiv>a{
+cursor: pointer;
+font-size: 1.1em;
+color: #6734eb;
+}
+.extdiv>a:hover{
+  color: black;
+}
+#barr{
+  width: 1.3em;
+  transform: translateY(20%);
+}
+.extdiv>a:hover
+#barr{
+  transform: translate(20%,20%);
+  transition: tranform 1s;
+}
+.extdiv>h3{
+  padding-left: 1em;
+  border-left: 0.1em solid #6734eb;
+}
+#extdiv2{
+  position: absolute;
+  right: -160%;
+}
+.footer{
+  position: absolute;
+  bottom: -470%;
+  left: 13%;
+}
+.listsdiv{
+  position: absolute;
+  left: 132%;
+  top: 10%;
+}
+.listsdiv>ul{
+text-decoration: none;
+list-style: none;
+font-size: 1em;
+font-family: 'Kanit', sans-serif; 
+}
+.listsdiv>ul>li{
+  color:#6734eb;
+  cursor: pointer;
+}
+.listsdiv>ul>li:hover{
+  color: black;
+}
+#listdiv2{
+  position: absolute;
+  left: 280%;
+}
+#listdiv3{
+  position: absolute;
+  left: 440%;
+}
+.formdiv{
+  position: absolute;
+top: 50%;
+right: 50%;
+transform: translate(50%,-50%);
+background-color: white;
+width: 30vw;
+height: 70vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+box-shadow: 1px 1px 150px rgba(0, 0, 0, 0.363);
+}
+.formdiv>form{
+  position: absolute;
+  top: 30%;
+}
+.formdiv>form>input{
+  width: 25vw;
+  height: 6vh;
+  border-radius: 0.7em;
+  /* border: 0.1em solid black; */
+  box-shadow: 1px 1px 2px black;
+  border: none;
+  
+}
+.formdiv>form>label{
+  font-size: 1em;
+  border: none;
+  padding: 0;
+}
+.formdiv>form>button{
+  position: absolute;
+  left: 7%;
+  bottom: -60%;
+  color: white;
+  background-color: #635BFF;
+  width: 20vw;
+  height: 6vh;
+  border-radius: 0.8em;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+ 
+}
+.formdiv>h2{
+  position: absolute;
+  top: 10%;
+}
+.logo{
+  position: absolute;
+  left: 35%;
+  top: 7%;
+  cursor: pointer;
+ 
 }

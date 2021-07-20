@@ -12,13 +12,19 @@ import tech4 from './tech4.png'
 import tech5 from './tech5.png'
 import earth from './earth.png'
 import comp from './comp.png'
+import logo1 from './logo1.png'
+import logo2 from './logo2.png'
+import blackarr from './blackarr.png'
+import bg1 from './bg1.png'
+import { func } from 'prop-types';
 class Homescreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
         dispproduct:"none",
-        
-        dispuse:"none"};
+        dispdev:"none",
+        dispuse:"none",
+        dispcomp:"none"};
       }
  
      prohover=()=>{
@@ -32,6 +38,8 @@ class Homescreen extends Component {
          else{
             this.setState({
                 dispproduct:"flex",
+                dispdev:"none",
+                dispcomp:"none",
                 dispuse:"none",
                 
              })
@@ -49,15 +57,51 @@ class Homescreen extends Component {
         else{
            this.setState({
                dispuse:"flex",
+               dispdev:"none",
+               dispcomp:"none",
                dispproduct:"none",
                
             })
         }
     }
 
+    devhover=()=>{
+        if(this.state.dispdev=='flex'){
+           
+            this.setState({
+                dispdev:"none",
+              
+            })
+            }
+            else{
+               this.setState({
+                dispdev:"flex",
+                   dispproduct:"none",
+                   dispcomp:"none",
+                   dispuse:"none",
+                   
+                })
+            }
+    }
 
-
-
+    comphover=()=>{
+        if(this.state.dispcomp=='flex'){
+           
+            this.setState({
+                dispcomp:"none",
+              
+            })
+            }
+            else{
+               this.setState({
+                dispcomp:"flex",
+                dispdev:"none",
+                   dispproduct:"none",
+                   dispuse:"none",
+                   
+                })
+            }
+    }
 
 
 
@@ -74,7 +118,7 @@ render(){
        <div className='bg-w-t'></div>
        <div id='nav'>
            <ul >
-               <li className='logo-svg'>
+               <li className='logo-svg' onClick={()=>{window.location='/'}}>
            <svg  viewBox="0 0 60 25" xmlns="http://www.w3.org/2000/svg" width="60" height="25" class="UserLogo variant-- "><title>Stripe logo</title><path fill="#ffffff" d="M59.64 14.28h-8.06c.19 1.93 1.6 2.55 3.2 2.55 1.64 0 2.96-.37 4.05-.95v3.32a8.33 8.33 0 0 1-4.56 1.1c-4.01 0-6.83-2.5-6.83-7.48 0-4.19 2.39-7.52 6.3-7.52 3.92 0 5.96 3.28 5.96 7.5 0 .4-.04 1.26-.06 1.48zm-5.92-5.62c-1.03 0-2.17.73-2.17 2.58h4.25c0-1.85-1.07-2.58-2.08-2.58zM40.95 20.3c-1.44 0-2.32-.6-2.9-1.04l-.02 4.63-4.12.87V5.57h3.76l.08 1.02a4.7 4.7 0 0 1 3.23-1.29c2.9 0 5.62 2.6 5.62 7.4 0 5.23-2.7 7.6-5.65 7.6zM40 8.95c-.95 0-1.54.34-1.97.81l.02 6.12c.4.44.98.78 1.95.78 1.52 0 2.54-1.65 2.54-3.87 0-2.15-1.04-3.84-2.54-3.84zM28.24 5.57h4.13v14.44h-4.13V5.57zm0-4.7L32.37 0v3.36l-4.13.88V.88zm-4.32 9.35v9.79H19.8V5.57h3.7l.12 1.22c1-1.77 3.07-1.41 3.62-1.22v3.79c-.52-.17-2.29-.43-3.32.86zm-8.55 4.72c0 2.43 2.6 1.68 3.12 1.46v3.36c-.55.3-1.54.54-2.89.54a4.15 4.15 0 0 1-4.27-4.24l.01-13.17 4.02-.86v3.54h3.14V9.1h-3.13v5.85zm-4.91.7c0 2.97-2.31 4.66-5.73 4.66a11.2 11.2 0 0 1-4.46-.93v-3.93c1.38.75 3.1 1.31 4.46 1.31.92 0 1.53-.24 1.53-1C6.26 13.77 0 14.51 0 9.95 0 7.04 2.28 5.3 5.62 5.3c1.36 0 2.72.2 4.09.75v3.88a9.23 9.23 0 0 0-4.1-1.06c-.86 0-1.44.25-1.44.9 0 1.85 6.29.97 6.29 5.88z" fill-rule="evenodd"></path></svg>
            </li>
            <li>
@@ -82,13 +126,13 @@ render(){
                <ul>
            <li><button  className='center-btn' onClick={this.prohover} >Products</button></li>
            <li><button className='center-btn' onClick={this.usehover}  >Use cases</button></li>
-           <li><button  className='center-btn'>Developers</button></li>
-           <li><button  className='center-btn'>Company</button></li>
+           <li><button  className='center-btn' onClick={this.devhover}>Developers</button></li>
+           <li><button  className='center-btn' onClick={this.comphover}>Company</button></li>
            <li><button className='center-btn'>pricing</button></li>
            </ul>
            </div>
            </li>
-           <li><button className='signin-btn' style={{textAlign:"center",justifyContent:"middle",display:"flex",alignContent:'center',flexDirection:"row",paddingLeft:'1em'}}>Sign In <img src={arr} id='arr'  ></img></button></li>
+           <li><button className='signin-btn' onClick={()=>{window.location='/login'}} style={{textAlign:"center",justifyContent:"middle",display:"flex",alignContent:'center',flexDirection:"row",paddingLeft:'1em'}}>Sign In <img src={arr} id='arr'  ></img></button></li>
            </ul>
        </div>
        <div className='mainimg'>
@@ -172,6 +216,40 @@ render(){
            
         </ul>
     </div>
+
+    <div className='devdropdwn'style={{display:this.state.dispdev}} >
+    <div className='trismol' style={{transform:"translateX(4em)"}}></div>
+    <ul className='ul1' >
+            
+            <li>Documentation</li>
+            <p>Start integrating Stripe’s products and tools</p>
+            <li>API reference</li>
+            <p>Manage APIs</p>
+            <li>API change log</li>
+            <p>API changes are stored</p>
+            <li>Support</li>
+            <p>Let customer accept payments within your platform</p>
+           
+        </ul>
+    </div>
+<div className='compdrpdwn' style={{display:this.state.dispcomp}} >
+    <div className='trismol' style={{transform:"translateX(4em)"}}></div>
+    <ul className='ul1' >
+            
+            <li>About Stripe</li>
+            <p>know more about us</p>
+            <li>Jobs</li>
+            <p>Look for jobs at stripe</p>
+            <li>Partners</li>
+            <p>take a look at our partners</p>
+            <li>Enterprise</li>
+            <p>Let customer accept payments within your platform</p>
+           
+        </ul>
+    </div>
+
+
+
     <div className='comps'>
         <img src={comp}></img>
         
@@ -221,6 +299,77 @@ render(){
            </div>
 <img src={earth}></img>
        </div>
+<div className='ldiv'>
+<h2>Ready to get started?</h2>
+<h3>Explore Stripe Payments, or create an account instantly and start accepting payments. You can also contact us to design a custom package for your business.</h3>
+<div className='txtbtn' id='samebtns'><button  id='startbtn'>Start Now</button>
+       <button id='conbtn' >Contact Sales</button></div>
+      <div className='extdiv'>
+        <img src={logo1}></img>
+        <h3>Always know what you pay</h3>
+        <p>Integrated per-transaction pricing with no hidden fees.</p>
+        <a>Pricing details <img id='barr' src={blackarr}></img> </a>
+      </div>
+      <div className='extdiv' id='extdiv2'>
+        <img src={logo2}></img>
+        <h3>Start your integration</h3>
+        <p>Get up and running with Stripe in as little as 10 minutes.</p>
+        <a>API reference <img id='barr' src={blackarr}></img> </a>
+      </div>
+      
+</div>
+<div className='footer' >
+    <hr></hr>
+    <br></br>
+      <svg  viewBox="0 0 60 25" xmlns="http://www.w3.org/2000/svg" width="60" height="25" class="UserLogo variant-- "><title>Stripe logo</title><path fill="#000" d="M59.64 14.28h-8.06c.19 1.93 1.6 2.55 3.2 2.55 1.64 0 2.96-.37 4.05-.95v3.32a8.33 8.33 0 0 1-4.56 1.1c-4.01 0-6.83-2.5-6.83-7.48 0-4.19 2.39-7.52 6.3-7.52 3.92 0 5.96 3.28 5.96 7.5 0 .4-.04 1.26-.06 1.48zm-5.92-5.62c-1.03 0-2.17.73-2.17 2.58h4.25c0-1.85-1.07-2.58-2.08-2.58zM40.95 20.3c-1.44 0-2.32-.6-2.9-1.04l-.02 4.63-4.12.87V5.57h3.76l.08 1.02a4.7 4.7 0 0 1 3.23-1.29c2.9 0 5.62 2.6 5.62 7.4 0 5.23-2.7 7.6-5.65 7.6zM40 8.95c-.95 0-1.54.34-1.97.81l.02 6.12c.4.44.98.78 1.95.78 1.52 0 2.54-1.65 2.54-3.87 0-2.15-1.04-3.84-2.54-3.84zM28.24 5.57h4.13v14.44h-4.13V5.57zm0-4.7L32.37 0v3.36l-4.13.88V.88zm-4.32 9.35v9.79H19.8V5.57h3.7l.12 1.22c1-1.77 3.07-1.41 3.62-1.22v3.79c-.52-.17-2.29-.43-3.32.86zm-8.55 4.72c0 2.43 2.6 1.68 3.12 1.46v3.36c-.55.3-1.54.54-2.89.54a4.15 4.15 0 0 1-4.27-4.24l.01-13.17 4.02-.86v3.54h3.14V9.1h-3.13v5.85zm-4.91.7c0 2.97-2.31 4.66-5.73 4.66a11.2 11.2 0 0 1-4.46-.93v-3.93c1.38.75 3.1 1.31 4.46 1.31.92 0 1.53-.24 1.53-1C6.26 13.77 0 14.51 0 9.95 0 7.04 2.28 5.3 5.62 5.3c1.36 0 2.72.2 4.09.75v3.88a9.23 9.23 0 0 0-4.1-1.06c-.86 0-1.44.25-1.44.9 0 1.85 6.29.97 6.29 5.88z" fill-rule="evenodd"></path></svg>
+     <h4>India</h4>
+     <h4>English(United States)
+     </h4>
+     <div className='listsdiv'>
+      <ul>
+          <h3>Prodcuts</h3>
+          <li>Atlas</li>
+            <li>Billing</li>
+            <li> Card</li>
+            <li>Sigma</li>
+            <li>Terminal</li>
+            <li>Tax</li>
+            <li>Radar</li>
+            <li>Pricing</li>
+            <li>Payouts</li>
+
+      </ul>
+     </div>
+     <div className='listsdiv' id='listdiv2'>
+      <ul>
+          <h3>Developers</h3>
+          <li>Documentation</li>
+            <li>API reference</li>
+            <li> API status</li>
+           
+      </ul>
+     </div>
+     <div className='listsdiv' id='listdiv3'>
+      <ul>
+          
+           <h3>Company</h3>
+            <li>About</li>
+            <li>Customers</li>
+            <li>Partners</li>
+            <li>Jobs</li>
+            <li>Blogs</li>
+
+      </ul>
+     </div>
+
+      </div>
+
+
+
+
+
+
+
     </div>
   );}
 }
